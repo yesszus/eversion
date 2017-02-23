@@ -3,20 +3,14 @@ if (!defined('e107_INIT'))
 {
     exit;
 }
+e107::lan('eversion',true); 
 if (!$eclassif_install = $sql->db_Select("plugin", "*", "plugin_path = 'faq' AND plugin_installflag = '1' "))
 {
     return;
 }
 if (check_class($pref['eversion_read']))
 {
-    if (e_LANGUAGE != "English" && file_exists(e_PLUGIN . "eversion/languages/" . e_LANGUAGE . ".php"))
-    {
-        include_once(e_PLUGIN . "eversion/languages/" . e_LANGUAGE . ".php");
-    }
-    else
-    {
-        include_once(e_PLUGIN . "eversion/languages/English.php");
-    }
+    
     $LIST_CAPTION = $arr[0];
     $LIST_DISPLAYSTYLE = ($arr[2] ? "" : "none");
 

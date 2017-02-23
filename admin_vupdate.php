@@ -9,7 +9,6 @@ if (!getperms("P"))
     header("location:" . e_BASE . "index.php");
     exit;
 }
-
 if (e_LANGUAGE != "English" && file_exists("./languages/eversion/" . e_LANGUAGE . ".php"))
 {
     include_once("./languages/eversion/" . e_LANGUAGE . ".php");
@@ -18,6 +17,7 @@ else
 {
     include_once("./languages/eversion/English.php");
 }
+ 
 require_once(e_ADMIN . "auth.php");
 $path    = e_CURRENT_PLUGIN;
 $xml 		 = e107::getXml();

@@ -1,21 +1,6 @@
 <?php
-/*
-+---------------------------------------------------------------+
-|	e107 website system
-|
-|	Released under the terms and conditions of the
-|	GNU General Public License (http://gnu.org).
-+---------------------------------------------------------------+
-*/
 if (!defined('e107_INIT')) { exit; }
-if(e_LANGUAGE !="English" && file_exists(e_PLUGIN_ABS."eversion/languages/admin/".e_LANGUAGE.".php"))
-{
-	include_once(e_PLUGIN_ABS."eversion/languages/admin/".e_LANGUAGE.".php");
-}
-else
-{
-	include_once(e_PLUGIN_ABS."eversion/languages/admin/English.php");
-}
+e107::lan('eversion',true);
 $action = basename($_SERVER['PHP_SELF'], ".php");
 
 $var['admin_config']['text'] = EVERSION_A21;

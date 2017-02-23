@@ -11,21 +11,9 @@ if (!getperms("P"))
     exit;
 }
 
-if (e_LANGUAGE != "English" && file_exists(e_PLUGIN_ABS . "eversion/languages/admin/" . e_LANGUAGE . ".php"))
-{
-    include_once(e_PLUGIN_ABS . "eversion/languages/admin/" . e_LANGUAGE . ".php");
-}
-else
-{
-    include_once(e_PLUGIN_ABS . "eversion/languages/admin/English.php");
-}
+e107::lan('eversion',true); 
 
 require_once(e_HANDLER . "userclass_class.php");
-//require_once(e_HANDLER . "calendar/calendar_class.php");
-//$evrsn_cal = new DHTML_Calendar(true);
-
-//$eversion_text .= $evrsn_cal->load_files();
-
 require_once(e_ADMIN . "auth.php");
 
 $eversion_action = $_POST['eversion_action'];
@@ -174,7 +162,6 @@ if ($eversion_action == 'dothings')
 
         $evrsn_cal_attrib['value'] = ($eversion_date > 0?date($pref['eversion_dformat'], $eversion_date):"");
 
-        //$evrsn_desc = $evrsn_cal->make_input_field($evrsn_cal_options, $evrsn_cal_attrib);
         $evrsn_desc = e107::getForm()->datepicker($evrsn_cal_attrib['name'], $evrsn_cal_attrib['value']);
         $eversion_text .= "
 		<tr><td style='width:20%;vertical-align:top;' class='forumheader3'>" . EVERSION_A45 . "</td><td  class='forumheader3'>" . $evrsn_desc . "</td></tr>";

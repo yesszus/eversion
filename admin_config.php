@@ -1,7 +1,5 @@
 <?php
 
-// Generated e107 Plugin Admin Area 
-
 require_once('../../class2.php');
 if (!getperms('P')) 
 {
@@ -9,7 +7,7 @@ if (!getperms('P'))
 	exit;
 }
 
-e107::lan('eversion',true);   //e107_plugins/faqs/languages/English/English_admin.php
+e107::lan('eversion',true);   
  
 
 class eversion_adminArea extends e_admin_dispatcher
@@ -30,8 +28,8 @@ class eversion_adminArea extends e_admin_dispatcher
 	
 	protected $adminMenu = array(
  
-	 'main/prefs'		=> array('caption'=> EVERSION_A21, 'perm' => 'P'), 
-   'main/list'		=> array('caption'=> EVERSION_A22, 'perm' => 'P'),
+	 'main/prefs'	=> array('caption'=> EVERSION_A21, 'perm' => 'P'), 
+     'main/list'	=> array('caption'=> EVERSION_A22, 'perm' => 'P'),
 	 'main/create'	=> array('caption'=> EVERSION_A24, 'perm' => 'P'),	 
 	 'main/getall' 	=> array('caption'=> EVERSION_A25, 'perm' => 'P'),
 	 'main/vupdate' => array('caption'=> EVERSION_A23, 'perm' => 'P'),	 
@@ -44,30 +42,17 @@ class eversion_adminArea extends e_admin_dispatcher
 	
 	protected $menuTitle = EVERSION_A1;
 }
-
-
-
-
 				
 class eversion_ui extends e_admin_ui
 {
 			
 		protected $pluginTitle		= EVERSION_A1;
 		protected $pluginName		= 'eversion';
-	//	protected $eventName		= 'eversion-eversion'; // remove comment to enable event triggers in admin. 		
 		protected $table			= 'eversion';
 		protected $pid				= 'eversion_id';
 		protected $perPage			= 10; 
 		protected $batchDelete		= true;
-	//	protected $batchCopy		= true;		
-	//	protected $sortField		= 'somefield_order';
-	//	protected $orderStep		= 10;
-	//	protected $tabs				= array('Tabl 1','Tab 2'); // Use 'tab'=>0  OR 'tab'=>1 in the $fields below to enable. 
-		
-	//	protected $listQry      	= "SELECT * FROM `#tableName` WHERE field != '' "; // Example Custom Query. LEFT JOINS allowed. Should be without any Order or Limit.
-	
-		protected $listOrder		= 'eversion_id DESC';
-	
+		protected $listOrder		= 'eversion_id DESC';	
 		protected $fields 		= array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
 		  'eversion_id' =>   array ( 'title' => LAN_ID, 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'eversion_title' =>   array ( 'title' => EVERSION_A41, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'inline' => true, 'help' => '', 
@@ -98,17 +83,13 @@ class eversion_ui extends e_admin_ui
 			'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),		
 		  'eversion_updated' =>   array ( 'title' => EVERSION_A79, 'type' => 'datestamp', 'data' => 'int', 'width' => 'auto', 'help' => '', 
 			'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		 // 'eversion_category' =>   array ( 'title' => LAN_CATEGORY, 'type' => 'dropdown', 'data' => 'int', 'width' => 'auto', 'batch' => true, 'filter' => true, 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-
 		  'options' =>   array ( 'title' => LAN_OPTIONS, 'type' => null, 'data' => null, 'width' => '10%', 'thclass' => 'center last', 'class' => 'center last', 'forced' => '1',  ),
 		);		
 		
 		protected $fieldpref = array('eversion_name', 'eversion_title', 'eversion_date', 'eversion_category');
 		
 
-	//	protected $preftabs        = array('General', 'Other' );
 		protected $prefs = array(
-//			'eversion_url'		=> array('title'=> 'Eversion_url', 'tab'=>0, 'type'=>'text', 'data' => 'str', 'help'=>''),
 			'eversion_read'		=> array('title'=> EVERSION_A3, 'tab'=>0, 'type'=>'userclass', 'data' => 'str', 'help'=>''),
 			'eversion_noplug'		=> array('title'=> EVERSION_A56, 'tab'=>0, 'type'=>'text', 'data' => 'str', 'help'=>''),
 			'eversion_dformat'		=> array('title'=> EVERSION_A58, 'tab'=>0, 'type'=>'dropdown', 'data' => 'str', 'help'=>''),

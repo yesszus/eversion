@@ -17,7 +17,7 @@ if (e_LANGUAGE != "English" && file_exists("./languages/eversion/" . e_LANGUAGE 
 else
 {
     include_once("./languages/eversion/English.php");
-}
+} 
 require_once(e_ADMIN . "auth.php");
 // Scan all installed plugin folders to see if there is an e_update file
 $evrsn_list_files = array();
@@ -96,20 +96,14 @@ foreach($evrsn_data as $evrsn_row)
 }
  
 sort($evrsn_datalist);
-// echo"<pre>";
-// echo print_r($evrsn_data);
-// echo"</pre>";
-// echo"<pre>";
-// echo print_r($evrsn_installed);
-// echo"</pre>";
-$evrsn_text = "<table class='fborder table adminlist table-striped' style='width:97%'>
-<tr><td class='fcaption' colspan=5' >".EVERSION_A74."</td></tr>
+$evrsn_text = "<table class='fborder table adminlist table-striped' style='width:99%'>
+<tr><td class='fcaption' colspan=10'>".EVERSION_A74."</td></tr>
 		<tr>
-			<td class='forumheader2'>".EVERSION_5." / ".EVERSION_11."</td>
+			<td style='width:15%' class='forumheader2'>".EVERSION_5." / ".EVERSION_11."</td><td class='forumheader2'></td>
 			<td class='forumheader2'>".EVERSION_A72."</td>
 			<td class='forumheader2'>".EVERSION_A73."</td>
 			<td class='forumheader2'>PM</td>
-			<td class='forumheader2'>Get</td>
+			<td class='forumheader2'>Get</td><td class='forumheader2'></td>
 		</tr>";
 
 foreach($evrsn_datalist as $row)
@@ -178,10 +172,11 @@ foreach($evrsn_datalist as $row)
 }
 $evrsn_text .= "
 		<tr>
-			<td colspan='2'class='forumheader3' style='vertical-align:top;'>&nbsp;</td>
-			<td class='forumheader3' style='vertical-align:top;'>" . $evrsn_icons[3] . " ".EVERSION_A75."<br />" . $evrsn_icons[2] . " ".EVERSION_A76."<br />" . $evrsn_icons[4] . " ".EVERSION_A76." (beta)</td>
-			<td class='forumheader3' style='vertical-align:top;'>" . $evrsn_icons[3] . " Plugin OK<br />" . $evrsn_icons[1] . " ".EVERSION_A77."<br />" . $evrsn_icons[5] . " ".EVERSION_A78."</td>
-			<td class='forumheader3'&bnsp;</td></tr>";
+			<!--<td colspan='2'class='forumheader3' style='vertical-align:top;'>&nbsp;</td>-->
+			
+			<td style='width:15%'>" . $evrsn_icons[3] . " ".EVERSION_A75."</td><td style='width:15%'>" . $evrsn_icons[2] . " ".EVERSION_A76."</td><td style='width:25%'>" . $evrsn_icons[4] . " ".EVERSION_A76." (beta)</td>
+			<td style='width:10%'>" . $evrsn_icons[3] . " Plugin OK</td><td style='width:20%'>" . $evrsn_icons[1] . " ".EVERSION_A77."</td><td style='width:20%'>" . $evrsn_icons[5] . " ".EVERSION_A78."</td>
+			<td class='forumheader3'></td></tr>";
 $evrsn_text .= "</table>";
 
 $ns->tablerender(EVERSION_U16, $evrsn_text);

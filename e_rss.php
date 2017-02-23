@@ -1,19 +1,10 @@
 <?php
-// *
-// e_rss for jokes_menu
-// *
-if (e_LANGUAGE != "English" && file_exists(e_PLUGIN_ABS . "eversion/languages/" . e_LANGUAGE . ".php"))
-{
-    include_once(e_PLUGIN_ABS . "eversion/languages/" . e_LANGUAGE . ".php");
-}
-else
-{
-    include_once(e_PLUGIN_ABS . "eversion/languages/English.php");
-}
+
 if (!defined('e107_INIT'))
 {
     exit;
 }
+e107::lan('eversion',true); 
 global $pref, $tp;
 // ##### e_rss.php ---------------------------------------------
 // get all the categories

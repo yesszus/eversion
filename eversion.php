@@ -8,14 +8,7 @@ if (!defined('e107_INIT'))
 
 global $pref;
 
-if (e_LANGUAGE != "English" && file_exists(e_PLUGIN . "eversion/languages/" . e_LANGUAGE . ".php"))
-{
-    include_once(e_PLUGIN . "eversion/languages/" . e_LANGUAGE . ".php");
-}
-else
-{
-    include_once(e_PLUGIN . "eversion/languages/English.php");
-}
+e107::lan('eversion',true); 
 
 require_once(e_HANDLER."userclass_class.php");
 $evrsn_conv = new convert;

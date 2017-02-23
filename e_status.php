@@ -1,12 +1,14 @@
 <?php
-if (e_LANGUAGE != "English" && file_exists(e_PLUGIN_ABS . "eversion/languages/admin/" . e_LANGUAGE . ".php"))
+e107::lan('eversion',true);
+
+/*if (e_LANGUAGE != "English" && file_exists(e_PLUGIN_ABS . "eversion/languages/" . e_LANGUAGE . "_admin.php"))	
 {
-    include_once(e_PLUGIN_ABS . "eversion/languages/admin/" . e_LANGUAGE . ".php");
+//	include_once(e_PLUGIN_ABS . "eversion/languages/" . e_LANGUAGE . "_admin.php");
 } 
 else
 {
-    include_once(e_PLUGIN_ABS . "eversion/languages/admin/English.php");
-} 
+//	include_once(e_PLUGIN_ABS . "eversion/languages/English_admin.php");
+} */
 $evrsn_posts = $sql->db_Count("eversion", "(*)");
 if (empty($evrsn_posts))
 {
