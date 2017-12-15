@@ -2,7 +2,7 @@
 <e107Plugin name="Everziós Pluginok" lan="" version="2.0.1" date="2016-09-27" compatibility="2.0" installRequired="true" >
 	<author name="Barry" url="http://www.keal.me.uk" />
 	<summary lan="EVERSION_SUMMARY">Plugin Verzió Ellenőrző</summary>
-	<description lan="EVERSION_DESC"></description>
+	<description lan="EVERSION_DESC">Plugin Verzió Ellenőrző</description>
 	<keywords>
 		<word>admin</word>
 		<word>plugin</word>

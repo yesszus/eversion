@@ -9,7 +9,8 @@ if (!defined('e107_INIT'))
 global $pref;
 
 //e107::lan('eversion', true); 
-e107::lan('eversion', false, true); 
+//e107::lan('eversion', false, true); 
+e107::lan('eversion');
 
 require_once(e_HANDLER."userclass_class.php");
 $evrsn_conv = new convert;

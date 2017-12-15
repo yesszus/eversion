@@ -45,7 +45,7 @@ if (file_exists("plugin.xml") OR file_exists("plugin.php"))
        }
         $evrsn_text .= "<tr><td class='fcaption'>" . EVERSION_U11 . "</td></tr>
 		<tr><td class='forumheader3'>" . EVERSION_U3 . " <strong>" . $eplug_name . "</strong><br />
-	<!--	" . EVERSION_U4 . " <strong>" . $eplug_version . "</strong> " . ($evrsn_plugvsn[2] > 0?EVERSION_U8:"") . " <br />-->
+		" . EVERSION_U4 . " <strong>" . $eplug_version . "</strong> " . ($evrsn_plugvsn[2] > 0?EVERSION_U8:"") . " <br />
 		" . EVERSION_U4 . " <strong>" . $eplug_version . "</strong> <br />
 		" . EVERSION_U15 . "<strong> " . $eplug_description . "</strong><br />
 		</td></tr>
